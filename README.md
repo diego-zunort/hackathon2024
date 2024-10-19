@@ -1,2 +1,2 @@
-# hackathon2025
-utrgv hackathon 2025
+# hackathon2024
+utrgv hackathon 2024
