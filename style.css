@@ -22,19 +22,54 @@ body {
     list-style: none;
     margin: 0 30px;
     cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
-.logo img{
+
+/* Hover effect for menu items */
+.menu ul li:hover {
+    color: #19dafa; /* Changes the text color on hover */
+    transform: scale(1.1); /* Slightly enlarges the menu item on hover */
+}
+
+/* Active state styling */
+.active {
+    color: #19dafa !important;
+}
+
+/* Logo animation */
+.logo img {
     width: 30px;
     margin-top: -7px;
     margin-right: 48px;
+    transition: transform 0.5s ease;
 }
-.active{
-    color: #ffffff !important;
+
+.logo img:hover {
+    transform: rotate(360deg); /* Rotates the logo when hovered */
 }
+
 /* Target the home buttons */
 .home {
     color: white; /* Set Home text color to white */
 }
+
+/* Add keyframe for a subtle bounce effect on hover */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Move it up slightly */
+    }
+}
+
+/* Apply the bounce animation to the home buttons */
+.home:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Styling for the banner section */
 .banner{
     width: 80%;
     height: 70%;
@@ -46,6 +81,8 @@ body {
     justify-content: space-between; /* Align text and picture */
     align-items: flex-start; /* Align items toward the top */
 }
+
+/* Text styling in the banner */
 .app-text{
     width: 50%;
 }
@@ -55,6 +92,8 @@ body {
     position: relative;
     margin-left: 40px;
     color: #ffffff;
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards; /* Fade in text */
 }
 .app-text p{
     width: 650px;
@@ -62,7 +101,11 @@ body {
     margin: 30px 0 30px 40px;
     line-height: 25px;
     color: #919191;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in forwards; /* Delay fade for the paragraph */
 }
+
+/* Picture animation */
 .app-picture{
     width: 50%;
     display: flex;
@@ -72,6 +115,38 @@ body {
 .app-picture img{
     max-width: 400px; /* Adjust the width to scale the image */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 80px; /* Adjusted margin to move image farther right */
-    margin-top: -20px; /* Moved image slightly up */
+    margin-right: -20px; /* Adjust right margin */
+    position: relative; /* Use relative positioning */
+    top: -80px; /* Move the image up */
+    opacity: 1; /* Keep the image visible after animation */
+    animation: bounceIn 1s ease-out forwards; /* Bounce in for image */
+}
+
+/* Keyframes for fading in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for bounce in animation */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px); /* Start off-screen */
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(20px); /* Bounce effect */
+    }
+    70% {
+        transform: translateY(-10px); /* Bounce effect */
+    }
+    100% {
+        opacity: 1; /* Ensure opacity stays at 1 */
+        transform: translateY(0); /* Settle in place */
+    }
 }
