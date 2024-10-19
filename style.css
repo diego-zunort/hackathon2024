@@ -3,10 +3,16 @@
     padding: 0;
     font-family: sans-serif;
 }
+body {
+    background-color: #42455a; /* Same as the top stripe */
+    color: #b2b1b1;
+    width: 100%;
+    height: 100%;
+}
 .container{
     width: 100%;
     height: 100%;
-    background: #42455a;
+    background: transparent; /* Remove white background */
 }
 .menu ul{
     display: inline-flex;
@@ -15,9 +21,7 @@
 .menu ul li{
     list-style: none;
     margin: 0 30px;
-    color: #b2b1b1;
     cursor: pointer;
-
 }
 .logo img{
     width: 30px;
@@ -25,34 +29,49 @@
     margin-right: 48px;
 }
 .active{
-    color: #19dafa  !important;
+    color: #ffffff !important;
+}
+/* Target the home buttons */
+.home {
+    color: white; /* Set Home text color to white */
 }
 .banner{
     width: 80%;
     height: 70%;
-    top: 25%;
+    top: 20%; /* Adjusted to move up slightly */
     left: 130px;
     position: absolute;
     color: #fff;
+    display: flex;
+    justify-content: space-between; /* Align text and picture */
+    align-items: flex-start; /* Align items toward the top */
 }
 .app-text{
     width: 50%;
-    float: left;
 }
-.app-text:h1{
+.app-text h1{
     font-size: 43px;
     width: 640px;
     position: relative;
     margin-left: 40px;
+    color: #ffffff;
 }
 .app-text p{
     width: 650px;
     font-size: 15px;
     margin: 30px 0 30px 40px;
     line-height: 25px;
-    color: 919191;
+    color: #919191;
 }
 .app-picture{
     width: 50%;
-    float: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+.app-picture img{
+    max-width: 400px; /* Adjust the width to scale the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 80px; /* Adjusted margin to move image farther right */
+    margin-top: -20px; /* Moved image slightly up */
 }
