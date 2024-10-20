@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang"en">
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Build your own Card</title>
     <link rel="stylesheet" href="profile.css">
 </head>
@@ -10,63 +12,53 @@
             <ul>
                 <li class="active home"><a href="mainpage.html" class="rounded-text">Home</a></li>
                 <li class="active home"><a href="profile.html" class="rounded-text">Build your own</a></li> 
-                <li class="home rounded-text">My projects</li>
+                <li class="active home"><a href="result.html" class="rounded-text">My projects</a></li>
                 <li class="home rounded-text">Log in/Sign up</li>
             </ul>
         </div>
 
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>User profile</title>
-
-    <body>
         <h1>Hello!</h1>
-        <H4>Please enter the information needed to generate the cards:</H4>
-        
-            <form class="form", id="businessInfo">
-                <label for="nameofb">Name of your business:</label><br>
-                <input type="text" id="nameofb" name="nameofb"><br><br>
-    
-                <label for="subt">Subtitle for your business:</label><br>
-                <input type="text" id="subt" name="subtitle"><br><br>
-    
-                <label for="desc">Small description</label><br>
-                <textarea id="descrption" name="desc" row="10" cols="60"></textarea><br><br>
-    
-                <label for="Schedule">Enter your hours of operation</label><br>
-                <textarea id="opertaion" name="operation" row="10" cols="60"></textarea><br><br>
-    
-                <label for="location">Location (address, city)</label><br>
-                <input type="text" id="location" name="location"><br><br>
+        <h4>Please enter the information needed to generate the cards:</h4>
 
-                <button class="form__button__continue" type="Continue">Continue</button>
-                
-                </form>
-    
-                <form class = "form form--hidden", id = "persoanlInfo">
-                <label for="phone">Contact phone</label><br>
-                <input type="text" id="phone" name="phone"><br><br>
-    
-                <label for="email">Contact email</label><br>
-                <input type="text" id="email" name="email"><br><br>
+        <form class="form" id="businessInfo">
+            <label for="nameofb">Name of your business:</label><br>
+            <input type="text" id="nameofb" name="nameofb" required><br><br>
 
-                <button class="form__button__submit" type="submit">Submit</button>
+            <label for="subt">Subtitle for your business:</label><br>
+            <input type="text" id="subt" name="subtitle"><br><br>
 
-                
-           
-    
-            
-    
-                <label for="Font">Font</label><br>
-                <select id="font" name="font"> <br>
-                   <option value="1">1</option>
-                   <option value="2"> 2</option>
-                   <option value="3"> 3 </option>
-                   <option value="4"> 4</option>
-                   <option value="5"> 5</option>
-                </select><br><br>
-            </form>
+            <label for="desc">Small description:</label><br>
+            <textarea id="descrption" name="desc" rows="4" cols="60"></textarea><br><br>
 
-        </body>
+            <label for="Schedule">Enter your hours of operation:</label><br>
+            <textarea id="opertaion" name="operation" rows="4" cols="60"></textarea><br><br>
+
+            <label for="location">Location (address, city):</label><br>
+            <input type="text" id="location" name="location"><br><br>
+
+            <label for="phone">Contact phone:</label><br>
+            <input type="text" id="phone" name="phone"><br><br>
+
+            <label for="email">Contact email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
+
+            <label for="font">Font:</label><br>
+            <select id="font" name="font">
+                <option value="1">Font 1</option>
+                <option value="2">Font 2</option>
+                <option value="3">Font 3</option>
+                <option value="4">Font 4</option>
+                <option value="5">Font 5</option>
+            </select><br><br>
+
+            <button class="form__button__submit" type="button" id="generateBtn">Submit</button>  
+        </form>
+
+        <div id="cardResult"></div>
+
+    </div>
+
+    <!-- Link your JavaScript file -->
+    <script src="cardGen.js"></script>
+</body>
+</html>
