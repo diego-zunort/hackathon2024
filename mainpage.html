@@ -1,38 +1,47 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to InstantCard</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div class="container">
+        <!-- Logo Section -->
+        <div class="app-picture">
+            <img src="rocket_logo.png" alt="InstantCard Rocket Logo">
+        </div>
+        
+        <!-- Navigation Menu -->
         <div class="menu">
             <ul>
-                <li class="logo"><img src="newer.png"></li>
-                <li class="active home"><a href="mainpage.html">Home</a></li>
-                <li class="active home"><a href="profile.html">Build your own</a></li> 
-                <li class="home"></li>
-                <li class="home"></li>
+                <li class="active home"><a href="mainpage.html" class="rounded-text">Home</a></li>
+                <li class="active home"><a href="profile.html" class="rounded-text">Build your own</a></li> 
+                <li class="home rounded-text">My projects</li>
+                <li class="home rounded-text">Log in/Sign up</li>
             </ul>
         </div>
+        
+        <!-- Banner Section -->
         <div class="banner">
             <div class="app-text">
-                <h1>Generate professional business cards for your small 
-                business, easy, fast and quick!<h1>
-                <p>Simply enter a few details about your business, and you'll
-                receive<br> a card for your branding, quicker and easier than
-                ever.</p>
+                <h1>Generate professional business cards for your small business, easy, fast and quick!</h1>
+                <p>Simply enter a few details about your business, and you'll receive a card for your branding, quicker and easier than ever.</p>
+                <div>
+
+
+                </div>
+                <button class="rounded-btn" href="profile.html" class="rounded-text">Get Started</button>
             </div>
             <div class="app-picture">
-                <img src="newer.png">
+                <img src="newer.png" alt="Business Card Preview">
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-

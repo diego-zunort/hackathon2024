@@ -1,12 +1,80 @@
 body {
     background-color: #42455a; /* Same as the top stripe */
     color: #b2b1b1;
-    width: 100%;
-    height: 100%;
+
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
 }
 
-.container{
+
+.container {
     width: 100%;
     height: 100%;
-    background: transparent; /* Remove white background */
+    background: transparent;
+}
+
+.menu {
+    position: sticky;
+    top: 0;
+    background-color: rgba(66, 69, 90, 0.8);
+    z-index: 10;
+    padding: 10px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.menu ul {
+    display: inline-flex;
+    margin: 50px;
+}
+.menu ul li {
+    list-style: none;
+    margin: 0 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.form--hidden {
+    display: none;
+}
+
+.form > *:first-child {
+    margin-top: 0;
+}
+
+.form > *:last-child {
+    margin-bottom: 0;
+}
+
+.form__button__submit {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #29777d;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+.form__button__continue {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #29777d;
+    border: none;
+    border-radius: var(--border-radius);
+    outline: none;
+    cursor: pointer;
+    background: var(--color-primary);
+}
+
+form__text {
+    text-align: center;
 }

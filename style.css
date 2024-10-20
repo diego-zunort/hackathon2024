@@ -1,152 +1,222 @@
-*{
+/* Universal Styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
 body {
-    background-color: #42455a; /* Same as the top stripe */
+    background-color: #42455a;
     color: #b2b1b1;
     width: 100%;
     height: 100%;
+    scroll-behavior: smooth;
 }
-.container{
+
+/* Add Wavy Background */
+body::before {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 200px; /* Adjust wave height */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23000b76" fill-opacity="1" d="M0,32L30,42.7C60,53,120,75,180,80C240,85,300,75,360,96C420,117,480,171,540,186.7C600,203,660,181,720,192C780,203,840,245,900,229.3C960,213,1020,139,1080,133.3C1140,128,1200,192,1260,224C1320,256,1380,256,1410,256L1440,256L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path></svg>') repeat-x;
+    animation: moveWaves 10s linear infinite;
+    z-index: -1; /* Place behind all content */
+    opacity: 0.6; /* Slight transparency */
+}
+
+/* Wavy Animation */
+@keyframes moveWaves {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 1000px 0; /* Adjust speed by changing distance */
+    }
+}
+
+/* Container Styles */
+.container {
     width: 100%;
     height: 100%;
-    background: transparent; /* Remove white background */
+    background: transparent;
 }
-.menu ul{
+
+/* Logo Animation */
+.logo img {
+    width: 50px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(25, 218, 250, 0.6); /* Add glow */
+}
+
+.logo img:hover {
+    transform: rotate(360deg) scale(1.2);
+    box-shadow: 0 6px 20px rgba(25, 218, 250, 0.8); /* Hover glow */
+}
+
+/* Menu Styling */
+.menu {
+    position: sticky;
+    top: 0;
+    background-color: rgba(66, 69, 90, 0.8);
+    z-index: 10;
+    padding: 10px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.menu ul {
     display: inline-flex;
     margin: 50px;
 }
-.menu ul li{
+.menu ul li {
     list-style: none;
     margin: 0 30px;
     cursor: pointer;
     position: relative;
-    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-/* Hover effect for menu items */
-.menu ul li:hover {
-    color: #19dafa; /* Changes the text color on hover */
-    transform: scale(1.1); /* Slightly enlarges the menu item on hover */
+/* Rounded Text Effect for Menu */
+.rounded-text {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background-color: transparent;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Active state styling */
-.active {
-    color: #19dafa !important;
+.rounded-text:hover {
+    color: #19dafa;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.05);
 }
 
-/* Logo animation */
-.logo img {
-    width: 30px;
-    margin-top: -7px;
-    margin-right: 48px;
-    transition: transform 0.5s ease;
-}
-
-.logo img:hover {
-    transform: rotate(360deg); /* Rotates the logo when hovered */
-}
-
-/* Target the home buttons */
-.home {
-    color: white; /* Set Home text color to white */
-}
-
-/* Add keyframe for a subtle bounce effect on hover */
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-5px); /* Move it up slightly */
-    }
-}
-
-/* Apply the bounce animation to the home buttons */
-.home:hover {
-    animation: bounce 0.5s ease-in-out;
-}
-
-/* Styling for the banner section */
-.banner{
-    width: 80%;
-    height: 70%;
-    top: 20%; /* Adjusted to move up slightly */
-    left: 130px;
+.rounded-text::before {
+    content: "";
     position: absolute;
-    color: #fff;
-    display: flex;
-    justify-content: space-between; /* Align text and picture */
-    align-items: flex-start; /* Align items toward the top */
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.6s;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
 }
 
-/* Text styling in the banner */
-.app-text{
+.rounded-text:active::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Adjust Banner Section */
+.banner {
+    background-size: cover;
+    width: 100%;
+    min-height: 300px; /* Adjust height */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    position: relative;
+    box-shadow: inset 0 0 100px rgba(0,0,0,0.3); /* Depth effect */
+}
+.banner:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.app-text {
+    position: relative;
+    z-index: 2;
     width: 50%;
 }
-.app-text h1{
+.app-text h1 {
     font-size: 43px;
-    width: 640px;
-    position: relative;
-    margin-left: 40px;
     color: #ffffff;
-    opacity: 0;
-    animation: fadeIn 1s ease-in forwards; /* Fade in text */
+    animation: fadeInUp 1s ease-out;
 }
-.app-text p{
+.app-text p {
     width: 650px;
     font-size: 15px;
-    margin: 30px 0 30px 40px;
     line-height: 25px;
     color: #919191;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards; /* Delay fade for the paragraph */
+    animation: fadeInUp 1.5s ease-out;
 }
 
-/* Picture animation */
-.app-picture{
+/* CTA Buttons */
+.rounded-btn {
+    padding: 15px 30px;
+    background-color: #19dafa;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(25, 218, 250, 0.4);
+}
+
+.rounded-btn:hover {
+    background-color: #17c7e0;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(25, 218, 250, 0.6);
+}
+
+/* Picture Animation */
+.app-picture {
     width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
 }
-.app-picture img{
-    max-width: 400px; /* Adjust the width to scale the image */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: -20px; /* Adjust right margin */
-    position: relative; /* Use relative positioning */
-    top: -80px; /* Move the image up */
-    opacity: 1; /* Keep the image visible after animation */
-    animation: bounceIn 1s ease-out forwards; /* Bounce in for image */
+.app-picture img {
+    max-width: 400px;
+    height: auto;
+    margin-right: -20px;
+    position: relative;
+    top: -80px;
+    opacity: 1;
+    animation: bounceIn 1s ease-out forwards;
 }
 
-/* Keyframes for fading in */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Keyframes for bounce in animation */
 @keyframes bounceIn {
     0% {
         opacity: 0;
-        transform: translateY(-100px); /* Start off-screen */
+        transform: translateY(-100px);
     }
     50% {
         opacity: 1;
-        transform: translateY(20px); /* Bounce effect */
+        transform: translateY(20px);
     }
     70% {
-        transform: translateY(-10px); /* Bounce effect */
+        transform: translateY(-10px);
     }
     100% {
-        opacity: 1; /* Ensure opacity stays at 1 */
-        transform: translateY(0); /* Settle in place */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

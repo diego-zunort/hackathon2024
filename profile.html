@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 <html lang"en">
 <head>
-    <title>Welcome to InstantCard</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Build your own Card</title>
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
     <div class="container">
         <div class="menu">
             <ul>
-                <li class="logo"><img src="newer.png"></li>
-                <li class="active home"><a href="mainpage.html">Home</a></li>
-                <li class="active home"><a href="profile.html">Build your own</a></li> 
-                <li class="home">Home</li>
-                <li class="home">Home</li>
+                <li class="active home"><a href="mainpage.html" class="rounded-text">Home</a></li>
+                <li class="active home"><a href="profile.html" class="rounded-text">Build your own</a></li> 
+                <li class="home rounded-text">My projects</li>
+                <li class="home rounded-text">Log in/Sign up</li>
             </ul>
         </div>
 
@@ -23,9 +22,9 @@
         <title>User profile</title>
 
     <body>
-        <h1>Hello (username)!</h1>
+        <h1>Hello!</h1>
         <H4>Please enter the information needed to generate the cards:</H4>
-        <div class = "container">
+        
             <form class="form", id="businessInfo">
                 <label for="nameofb">Name of your business:</label><br>
                 <input type="text" id="nameofb" name="nameofb"><br><br>
@@ -39,20 +38,24 @@
                 <label for="Schedule">Enter your hours of operation</label><br>
                 <textarea id="opertaion" name="operation" row="10" cols="60"></textarea><br><br>
     
-                <label for="location">Location</label><br>
+                <label for="location">Location (address, city)</label><br>
                 <input type="text" id="location" name="location"><br><br>
-                <input type="submit" value="submit">
+
+                <button class="form__button__continue" type="Continue">Continue</button>
+                
                 </form>
     
-                <form class = "form", id = "persoanlInfo">
+                <form class = "form form--hidden", id = "persoanlInfo">
                 <label for="phone">Contact phone</label><br>
                 <input type="text" id="phone" name="phone"><br><br>
     
                 <label for="email">Contact email</label><br>
                 <input type="text" id="email" name="email"><br><br>
-                <input type="submit" value="submit">
-                </form>
-            </div>
+
+                <button class="form__button__submit" type="submit">Submit</button>
+
+                
+           
     
             
     
@@ -64,6 +67,6 @@
                    <option value="4"> 4</option>
                    <option value="5"> 5</option>
                 </select><br><br>
-        
+            </form>
 
         </body>
