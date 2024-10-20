@@ -37,6 +37,19 @@ body {
     position: relative;
 }
 
+.form__input {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    outline: none;
+    background: #f9f9f9;
+    transition: background 0.2s, border-color 0.2s;
+    font-size: 1rem;
+}
+
 .form--hidden {
     display: none;
 }

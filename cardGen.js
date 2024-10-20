@@ -1,6 +1,7 @@
 document.getElementById("generateBtn").addEventListener("click", generateBusinessCard);
 
 function generateBusinessCard() {
+  // Get user input
   const businessName = document.getElementById("nameofb").value;
   const subtitle = document.getElementById("subt").value;
   const description = document.getElementById("descrption").value;
@@ -10,16 +11,34 @@ function generateBusinessCard() {
   const email = document.getElementById("email").value;
   const fontChoice = document.getElementById("font").value;
 
-  // Save user input in sessionStorage
-  sessionStorage.setItem("businessName", businessName);
-  sessionStorage.setItem("subtitle", subtitle);
-  sessionStorage.setItem("description", description);
-  sessionStorage.setItem("operation", operation);
-  sessionStorage.setItem("location", location);
-  sessionStorage.setItem("phone", phone);
-  sessionStorage.setItem("email", email);
-  sessionStorage.setItem("fontChoice", fontChoice);
+  // Random design elements
+  const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f39c12'];
+  const fonts = ['Arial', 'Verdana', 'Helvetica', 'Courier New', 'Times New Roman'];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  const selectedFont = fonts[fontChoice - 1];
 
-  // Redirect to the card display page
-  window.location.href = "card.html";  // Redirect to card.html page
+  // Generate the business card HTML
+  const cardHtml = `
+    <div style="border: 1px solid black; padding: 20px; width: 300px; background-color: ${randomColor}; font-family: ${selectedFont};">
+      <h2>${businessName}</h2>
+      <h3>${subtitle}</h3>
+      <p>${description}</p>
+      <p>Hours of Operation: ${operation}</p>
+      <p>Location: ${location}</p>
+      <p>Phone: ${phone}</p>
+      <p>Email: ${email}</p>
+    </div>
+  `;
+
+  // Open a new tab and write the generated content there
+  const newTab = window.open('', '_blank');
+  newTab.document.write(`
+    <html>
+    <head><title>Your Business Card</title></head>
+    <body>
+      ${cardHtml}
+    </body>
+    </html>
+  `);
+  newTab.document.close(); // Close the document to finish loading the new tab
 }
