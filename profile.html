@@ -12,8 +12,8 @@
             <ul>
                 <li class="active home"><a href="mainpage.html" class="rounded-text">Home</a></li>
                 <li class="active home"><a href="profile.html" class="rounded-text">Build your own</a></li> 
-                <li class="active home"><a href="result.html" class="rounded-text">My projects</a></li>
-                <li class="home rounded-text">Log in/Sign up</li>
+                <li class="active home"><a href="gen.html" class="rounded-text">My projects</a></li>
+                <li class="active home"><a href="Login_signin.html" class="rounded-text">Log in / Sign in </a><li></li>
             </ul>
         </div>
 
@@ -42,16 +42,15 @@
             <label for="email">Contact email:</label><br>
             <input type="email" id="email" name="email"><br><br>
 
-            <label for="font">Font:</label><br>
-            <select id="font" name="font">
-                <option value="1">Font 1</option>
-                <option value="2">Font 2</option>
-                <option value="3">Font 3</option>
-                <option value="4">Font 4</option>
-                <option value="5">Font 5</option>
+            <label for="font">Choose style:</label><br>
+            <select id="font" name="style">
+                <option value="1">Minimalist</option>
+                <option value="2">Modern</option>
+                <option value="3">Elegant</option>
+                <option value="4">Futuristic</option>
             </select><br><br>
 
-            <button class="form__button__submit" type="button" id="generateBtn">Submit</button>  
+            <button class="form__button__submit" type="button" id="generateBtn" >Generate<button>  
         </form>
 
         <div id="cardResult"></div>
